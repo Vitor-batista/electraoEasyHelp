@@ -1,9 +1,13 @@
 {
-  "name": "electraoEasyHelp",
+  "name": "electrao-easy-help",
 	"displayName": "Electrao EasyHelp",
 	"description": "",
 	"version": "0.0.1",
 	"publisher": "VtorBatista",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Vitor-batista/electraoEasyHelp"
+	},
 	"engines": {
 		"vscode": "^1.74.0"
 	},
@@ -15,6 +19,34 @@
 	],
 	"main": "./extension.js",
 	"contributes": {
+		"viewsWelcome": [
+			{
+				"view": "welcome",
+				"contents": "In order to use this feature, you need to connect to the Electrão instance.\n[Authorize an Org](command:)\nTo lean more about this [read our documentation](vscode:extension/VtorBatista.electrao-easy-help)",
+				"when": "electrao.isNotConnected"
+			}
+		],
+		"viewsContainers": {
+			"activitybar" : [
+				{
+					"id": "electrao",
+					"title": "Eletrão",
+					"icon": "resources/package-explorer.svg"
+				}
+			]
+		},
+		"views" : {
+			"electrao" : [
+				{
+					"id": "data",
+					"name": "Data"
+				},
+				{
+					"id": "changeData",
+					"name": "Change Data"
+				}
+			]
+		},
 		"commands": [
 			{
 				"command": "electraoEasyHelp.refresh",
