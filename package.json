@@ -21,9 +21,8 @@
   "contributes": {
     "viewsWelcome": [
 			{
-				"view": "welcome",
-				"contents": "In order to use this feature, you need to connect to the Electrão instance.\n[Authorize an Org](command:)\nTo lean more about this [read our documentation](vscode:extension/VtorBatista.electrao-easy-help)",
-				"when": "electrao.isNotConnected"
+				"view": "electraoWelcome",
+				"contents": "In order to use this feature, you need to connect to the Electrão instance.\n[Authorize an Org](command:)\nTo lean more about this [read our documentation](vscode:extension/VtorBatista.electrao-easy-help)"
 			}
 		],
     "viewsContainers": {
@@ -38,11 +37,11 @@
     "views": {
       "electrao": [
         {
-          "id": "data",
+          "id": "electraoData",
           "name": "Data"
         },
         {
-          "id": "changeData",
+          "id": "electraoChangeData",
           "name": "Change Data"
         }
       ]
@@ -50,9 +49,22 @@
     "commands": [
       {
         "command": "electraoEasyHelp.refresh",
-        "title": "Refresh Data"
+        "title": "Refresh Data",
+        "icon": {
+					"light": "resources/light/refresh.svg",
+					"dark": "resources/dark/refresh.svg"
+				}
       }
-    ]
+    ],
+    "menus": {
+			"view/title": [
+				{
+					"command": "electraoEasyHelp.refresh",
+					"when": "view == electraoData",
+					"group": "navigation"
+				}
+			]
+		}
   },
   "scripts": {
     "lint": "eslint .",
