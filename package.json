@@ -2,7 +2,7 @@
   "name": "electrao-easy-help",
   "displayName": "Electrao EasyHelp",
   "description": "",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "publisher": "VtorBatista",
   "repository": {
     "type": "git",
@@ -20,11 +20,11 @@
   "main": "./extension.js",
   "contributes": {
     "viewsWelcome": [
-			{
-				"view": "electraoWelcome",
-				"contents": "In order to use this feature, you need to connect to the Electrão instance.\n[Authorize an Org](command:)\nTo lean more about this [read our documentation](vscode:extension/VtorBatista.electrao-easy-help)"
-			}
-		],
+      {
+        "view": "electraoWelcome",
+        "contents": "In order to use this feature, you need to connect to the Electrão instance.\n[Authorize an Org](command:)\nTo lean more about this [read our documentation](vscode:extension/VtorBatista.electrao-easy-help)"
+      }
+    ],
     "viewsContainers": {
       "activitybar": [
         {
@@ -51,20 +51,20 @@
         "command": "electraoEasyHelp.refresh",
         "title": "Refresh Data",
         "icon": {
-					"light": "resources/light/refresh.svg",
-					"dark": "resources/dark/refresh.svg"
-				}
+          "light": "resources/light/refresh.svg",
+          "dark": "resources/dark/refresh.svg"
+        }
       }
     ],
     "menus": {
-			"view/title": [
-				{
-					"command": "electraoEasyHelp.refresh",
-					"when": "view == electraoData",
-					"group": "navigation"
-				}
-			]
-		}
+      "view/title": [
+        {
+          "command": "electraoEasyHelp.refresh",
+          "when": "view == electraoData",
+          "group": "navigation"
+        }
+      ]
+    }
   },
   "scripts": {
     "lint": "eslint .",
